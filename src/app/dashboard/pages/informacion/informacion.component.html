@@ -1,0 +1,71 @@
+<div class="w-full bg-transparent scroll-smooth">
+    <app-title label="Red Neuronal Convolucional" />
+
+    <app-subtitle label="Núcleo (Kernel)" />
+    <div class="grid grid-cols-3 gap-1 w-44">
+        @for (item of kernal; track $index) {
+            <div class="w-14 h-14 bg-slate-200 border-2 border-slate-900 flex justify-center items-center">
+                <span> {{ item.numero }} </span>
+            </div>
+        }
+    </div>
+
+    <app-subtitle label="Copia de una imagen" />
+    <div class="grid grid-cols-3 gap-1 w-44">
+        @for (item of kernal; track $index) {
+            <div class="w-14 h-14 bg-slate-200 border-2 border-slate-900 flex justify-center items-center">
+                <span> {{ item.numero }} </span>
+            </div>
+        }
+    </div>
+
+    <app-subtitle label="Imagen blanca" />
+    <div class="grid grid-cols-3 gap-1 w-44">
+        @for (item of blanca; track $index) {
+            <div class="w-14 h-14 bg-slate-200 border-2 border-slate-900 flex justify-center items-center">
+                <span> {{ item.numero }} </span>
+            </div>
+        }
+    </div>
+
+    <app-subtitle label="Imagen distorsionada" />
+    <div class="grid grid-cols-4 gap-1 w-60">
+        @for (item of blur; track $index) {
+            @if ($index == 3 || $index == 11 ) { 
+                <div class="w-14 h-14"></div>
+            } @else if ($index == 7 ) {
+                <div class="w-14 h-14 flex justify-center items-center">
+                    <span class="font-bold text-3xl text-white"> {{ item.numero }} </span>
+                </div>
+            } @else {
+                <div class="w-14 h-14 bg-slate-200 border-2 border-slate-900 flex justify-center items-center">
+                    <span> {{ item.numero }} </span>
+                </div>
+            }
+        }
+    </div>
+
+    <app-subtitle label="Operador Sobel" />
+    <div class="grid grid-cols-2">
+        <div>
+            <span class="text-white font-semibold font-mono text-xs">Ejes verticales</span>
+            <div class="grid grid-cols-3 gap-1 w-44 mt-1">
+                @for (item of verticalSobel; track $index) {
+                    <div class="w-14 h-14 bg-slate-200 border-2 border-slate-900 flex justify-center items-center">
+                        <span> {{ item.numero }} </span>
+                    </div>
+                }
+            </div>
+        </div>
+        <div>
+            <span class="text-white font-semibold font-mono text-xs">Ejes horizontales</span>
+            <div class="grid grid-cols-3 gap-1 w-44 mt-1">
+                @for (item of horizontalSobel; track $index) {
+                    <div class="w-14 h-14 bg-slate-200 border-2 border-slate-900 flex justify-center items-center">
+                        <span> {{ item.numero }} </span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

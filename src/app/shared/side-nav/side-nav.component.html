@@ -1,0 +1,43 @@
+<div class="w-72 h-screen px-5 py-3 z-10 left-0 text-slate-800">
+    <div class="w-full h-full bg-slate-50 p-2 rounded-2xl shadow-md shadow-slate-600">
+        <div class="w-full h-16 flex items-center justify-evenly">
+            <i class="fa-solid fa-eye text-3xl text-slate-600"></i>
+            <span class="font-protestRiot text-slate-600 text-3xl">Bienvenido </span>
+        </div>
+        <hr
+            class="h-px bg-transparent mb-4 mt-2 border-t-0 bg-gradient-to-r from-transparent via-neutral-600 to-transparent opacity-40" />
+        <div class="w-auto h-[85%] overflow-auto flex flex-col items-start justify-between">
+            <div class="w-full">
+                <ul class="flex flex-col">
+                    @for(route of menuItems; track $index) {
+                        <li class="mt-0.5 mx-2">
+                            <button
+                                class="w-full px-4 py-1 text-sm text-slate-700 flex items-center rounded-lg focus:font-semibold focus:bg-slate-200 transition ease-linear duration-150 group"
+                                [routerLink]=route.path>
+                                <div class=" w-9 mr-2 ps-2 py-2.5 flex justify-start">
+                                    <i class="
+                                        {{ route.data?.['icon'] ??  'fa-solid fa-ban'}}
+                                        leading-normal 
+                                        text-[1rem] 
+                                        {{route.data?.['colors'] ?? 'black'}}">
+                                    </i>
+                                </div>
+                                <span class="ml-1 font-playSans"> {{ route.title }} </span>
+                            </button>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="w-full">
+                <hr
+                    class="h-px bg-transparent mb-4 mt-2 border-t-0 bg-gradient-to-r from-transparent via-neutral-600 to-transparent opacity-40" />
+                <button
+                    class="w-full bg-blue-400 text-white font-bold mt-5 py-2 text-sm flex items-center justify-center rounded-lg hover:bg-blue-500 transition ease-linear duration-150 active:scale-[.99]"
+                    routerLink="">
+                    <i class="fa-solid fa-right-from-bracket leading-normal text-xs mr-2"></i>
+                    <span class="text-xs">Logout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div> 

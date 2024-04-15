@@ -1,0 +1,27 @@
+<app-title label="Convoluciones" />
+
+<div class="w-full h-5/6 p-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-12 md:grid-rows-6 gap-5 h-full">
+
+        <div
+            class="bg-slate-50 col-span-1 row-span-5 flex justify-center items-center rounded-md shadow-sm shadow-slate-600">
+            <canvas #canvasOrigen class="h-full mx-auto"></canvas>
+        </div>
+
+        <div class="col-span-1 row-start-6 flex justify-center items-center">
+            <select class="bg-slate-50 p-1 w-48 text-xs font-bold rounded-md shadow-sm shadow-slate-600 outline-none"
+                (change)="onOptionsChange($event)">
+                <option value="" selected disabled>Seleccionar una convolución</option>
+                @for (item of optionSelect; track $index) {
+                    <option [value]=item.value>{{item.title}}</option>
+                }
+            </select>
+        </div>
+
+        <div
+            class="bg-slate-50 col-span-1 row-span-5 flex justify-center items-center rounded-md shadow-sm shadow-slate-600">
+            <canvas #canvasDestino class="h-full mx-auto"></canvas>
+        </div>
+        
+    </div>
+</div>
