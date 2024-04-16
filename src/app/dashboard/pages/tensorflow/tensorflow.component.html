@@ -1,1 +1,16 @@
-<p>tensorflow works!</p>
+<app-title label="Tensor Flow" />
+
+<div class="w-fit mt-5">
+    <video #video playsInline autoplay class="hidden shadow-sm shadow-black rounded-md"></video>
+    <div class="relative">
+        <canvas #canva width="400" height="400"
+            class="relative bg-blue-300 shadow-sm shadow-black rounded-md scale-x-[-1]"></canvas>
+        @if (loading()) {
+            <div class="absolute inset-0 flex flex-col justify-center items-center top-0 left-0">
+                <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-slate-700">
+                </div>
+                <p class="text-xs font-playSans mt-3 font-semibold text-slate-700">Un momento por favor...</p>
+            </div>
+        }
+    </div>
+</div>

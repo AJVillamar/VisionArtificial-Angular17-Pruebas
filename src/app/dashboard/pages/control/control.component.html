@@ -1,1 +1,20 @@
-<p>control works!</p>
+<app-title label="Control" />
+
+<div class="relative w-fit mt-5">
+    <video #video playsInline autoplay class="hidden"></video>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="col-span-1 relative">
+            <canvas #canva width="300" height="300"
+                class="bg-blue-300 shadow-sm shadow-black rounded-md transform scale-x-[-1]"></canvas>
+            @if (loading) {
+            <div class="absolute inset-0 flex justify-center items-center top-0 left-0">
+                <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-slate-700">
+                </div>
+            </div>
+            }
+        </div>
+        <div class="col-span-1 flex justify-center items-center">
+            <img #imgcar src="assets/img/car-img.png" alt="Imagen Car">
+        </div>
+    </div>
+</div>
